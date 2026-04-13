@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Bootcamp for Kids - Learn to build AI apps in 10 days. Online & In-Person. May 2026.">
+    <meta name="keywords" content="AI, bootcamp, kids, education, coding, programming, Gurugram">
+    <title>AI Bootcamp for Kids | Learn to Build AI Apps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section.light-bg {
+            background: #f8f9fa;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            border-left: 4px solid #2563eb;
+            background: white;
+            border-radius: 0.25rem;
+        }
+
+        .feature h4 {
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .feature p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        /* Curriculum Timeline */
+        .curriculum {
+            margin-top: 2rem;
+        }
+
+        .day-block {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #2563eb;
+        }
+
+        .day-block h4 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .day-block ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .day-block li {
+            padding: 0.3rem 0;
+            color: #2d3748;
+        }
+
+        .day-block li:before {
+            content: "→ ";
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .tool-badge {
+            background: white;
+            border: 2px solid #2563eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: #2563eb;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: white;
+            border: 2px solid #2563eb;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #718096;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-btn.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .tab-btn:hover {
+            color: #2563eb;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: #cbd5e0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Bonus Badge */
+        .bonus {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Limited Spots Alert */
+        .alert {
+            background: #fee;
+            border: 2px solid #f87171;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            color: #7f1d1d;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">🚀 AI Bootcamp</div>
+            <ul class="nav-links">
+                <li><a href="#parents">For Parents</a></li>
+                <li><a href="#schools">For Schools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Learn to Build AI Apps in 10 Days</h1>
+            <p>Give your child the confidence to build the future</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('parents').scrollIntoView({ behavior: 'smooth' })">For Parents</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('schools').scrollIntoView({ behavior: 'smooth' })">For Schools</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Parents Section -->
+        <section id="parents" class="light-bg">
+            <h2>✨ For Parents</h2>
+            <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 1.5rem;">
+                Igniting curiosity. Teaching the art of possible.
+            </p>
+
+            <div class="alert">
+                ⚠️ Limited Spots Available: 10–15 kids per batch, only 2–3 batches in May 2026
+            </div>
+
+            <!-- Quick Facts -->
+            <div class="highlight-box">
+                <h3>Quick Overview</h3>
+                <p><strong>📍 Location:</strong> Malibu Town, Sector 47, Gurugram</p>
+                <p><strong>📅 When:</strong> May 2026 (Flexible dates, 2–3 weeks)</p>
+                <p><strong>👥 Age:</strong> Class 5–8 (9–13 years)</p>
+                <p><strong>💻 Format:</strong> Online or In-Person (your choice)</p>
+                <p><strong>⏱️ Duration:</strong> 10 days, 1 hour per day</p>
+                <p><strong>📊 Batch Size:</strong> Max 15 kids</p>
+            </div>
+
+            <!-- What They'll Build -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>What Your Child Will Build</h3>
+                <p>By the end of 10 days, your child will have created:</p>
+                <div class="features">
+                    <div class="feature">
+                        <h4>🤖 AI Chatbot</h4>
+                        <p>An interactive chatbot powered by AI that understands and responds to questions</p>
+                    </div>
+                    <div class="feature">
+                        <h4>📝 Quiz Generator</h4>
+                        <p>A smart quiz app that generates questions and tracks progress</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🎨 Custom Project</h4>
+                        <p>Their own unique AI-powered application of their choosing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum -->
+            <div class="curriculum">
+                <h3 style="margin-top: 2rem;">The Journey: Day by Day</h3>
+                
+                <div class="day-block">
+                    <h4>Days 1–2: Understand AI</h4>
+                    <ul>
+                        <li>What is AI? How does it really work?</li>
+                        <li>Real-world examples they use every day</li>
+                        <li>Why learning AI matters right now</li>
+                        <li>Problem-solving mindset</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 3–4: Build Web Pages</h4>
+                    <ul>
+                        <li>HTML basics (structure)</li>
+                        <li>CSS styling (make it look amazing)</li>
+                        <li>JavaScript (add interactivity)</li>
+                        <li>First web page live</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 5–7: Create with AI</h4>
+                    <ul>
+                        <li>Learn 7 powerful AI tools</li>
+                        <li>Build an AI Chatbot</li>
+                        <li>Create a Smart Quiz Generator</li>
+                        <li>Deploy with GitHub & Vercel</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 8–10: Ship Your App</h4>
+                    <ul>
+                        <li>Build their custom AI project</li>
+                        <li>Polish and perfect it</li>
+                        <li>Present to other students</li>
+                        <li>Get certificate + 3 working apps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Tools They'll Learn</h3>
+                <p style="margin-bottom: 1rem;">Industry-standard AI tools used by professionals worldwide</p>
+                <div class="tools-grid">
+                    <div class="tool-badge">ChatGPT</div>
+                    <div class="tool-badge">Claude</div>
+                    <div class="tool-badge">Perplexity</div>
+                    <div class="tool-badge">Gemini</div>
+                    <div class="tool-badge">GitHub</div>
+                    <div class="tool-badge">Vercel</div>
+                    <div class="tool-badge">Lovable</div>
+                </div>
+            </div>
+
+            <!-- Key Outcomes -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Key Outcomes</h3>
+                <p>By Day 10, your child will:</p>
+                <div class="features">
+                    <div class="feature">
+                        <h4>✓ Understand AI</h4>
+                        <p>Not as magic, but as a tool they can understand and use</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Build Real Apps</h4>
+                        <p>3 working applications they can show off to family & friends</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Gain Confidence</h4>
+                        <p>"I can build the future" becomes their new mindset</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Problem-Solving</h4>
+                        <p>Learn to think creatively and solve problems systematically</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus -->
+            <div class="bonus">
+                🎁 BONUS: INR 2,800 Worth of AI Tool Credits Included
+            </div>
+            <p style="text-align: center; color: #718096;">
+                Your child can continue building and exploring AI even after the bootcamp ends
+            </p>
+
+            <!-- FAQ -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Common Questions</h3>
+                <div style="margin-top: 1.5rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: Does my child need coding experience?</h4>
+                        <p>No! We start from zero. Perfect for complete beginners. No prerequisites.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: What if they get stuck?</h4>
+                        <p>We teach problem-solving mindset and provide support throughout. Small batches ensure personalized attention.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: Is this just ChatGPT?</h4>
+                        <p>No. They learn 7+ different tools AND build their own apps. They become creators, not just users.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: What happens after?</h4>
+                        <p>They keep the AI credits (₹2,800) to continue building on their own. Plus a certificate and 3 working apps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schools Section -->
+        <section id="schools">
+            <h2>🏫 For Schools</h2>
+            <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 1.5rem;">
+                Partner with us to bring cutting-edge AI education to your students.
+            </p>
+
+            <div class="alert">
+                ⚠️ Limited Batch Availability: Only 2–3 batches in May 2026
+            </div>
+
+            <!-- Value Proposition -->
+            <div class="card">
+                <h3>Why Partner With Us?</h3>
+                <div class="features">
+                    <div class="feature">
+                        <h4>📍 Differentiation</h4>
+                        <p>First AI bootcamp in your area. Stand out from other schools.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>💰 Revenue</h4>
+                        <p>Zero upfront cost. Keep 50%+ of revenue while we handle everything.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>⚡ Zero Effort</h4>
+                        <p>We handle curriculum, teaching, materials, and mentoring. You market.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🌟 Reputation</h4>
+                        <p>Position your school as forward-thinking and innovation-focused.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Section -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>How It Works</h3>
+                <div class="highlight-box">
+                    <h4>Revenue Sharing Model</h4>
+                    <p>We believe in fair partnership. Your school benefits directly from the bootcamp without any upfront investment.</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: #718096;">Details discussed in a 20-minute call based on your needs and market conditions.</p>
+                </div>
+                <p style="margin-top: 1.5rem; color: #718096;">
+                    <strong>Your role:</strong> Market to your community. <strong>Our role:</strong> Teach, support, deliver results.
+                </p>
+            </div>
+
+            <!-- What Makes This Different -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>What Your Students Get</h3>
+                <div class="features">
+                    <div class="feature">
+                        <h4>🎓 Real Skills</h4>
+                        <p>Not theory. They build 3 working AI applications.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🚀 Confidence</h4>
+                        <p>"I can build the future" becomes their new mindset.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>💎 Credentials</h4>
+                        <p>Certificate + 3 working apps + INR 2,800 AI credits</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🎯 Future-Ready</h4>
+                        <p>AI literacy they'll need in college and beyond</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum Overview for Schools -->
+            <div class="curriculum">
+                <h3 style="margin-top: 2rem;">Complete 10-Day Curriculum</h3>
+                
+                <div class="day-block">
+                    <h4>Days 1–2: Understand AI</h4>
+                    <ul>
+                        <li>Demystify AI - what it really is</li>
+                        <li>How AI transforms industries</li>
+                        <li>Ethics in AI</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 3–4: Build Web Pages</h4>
+                    <ul>
+                        <li>HTML, CSS, JavaScript fundamentals</li>
+                        <li>Build & deploy their first website</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 5–7: Create with AI</h4>
+                    <ul>
+                        <li>ChatGPT, Claude, Perplexity, Gemini</li>
+                        <li>Build AI Chatbot & Quiz Generator</li>
+                        <li>GitHub & Vercel deployment</li>
+                    </ul>
+                </div>
+
+                <div class="day-block">
+                    <h4>Days 8–10: Ship Your App</h4>
+                    <ul>
+                        <li>Custom project design & build</li>
+                        <li>Presentation & showcase</li>
+                        <li>Certification ceremony</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Investment -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Your Investment</h3>
+                <div class="highlight-box">
+                    <p style="margin: 0;"><strong>Zero upfront cost</strong></p>
+                    <p style="margin: 0.5rem 0 0 0; color: #718096;">We handle everything. Your school earns through revenue sharing.</p>
+                    <p style="margin-top: 1rem; margin-bottom: 0;"><strong>Division of Labor</strong></p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1rem; color: #718096;">
+                        <li>You: Market, collect registrations, provide space</li>
+                        <li>Us: Curriculum, teaching, mentoring, support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Objection Handling -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Common Concerns</h3>
+                <div style="margin-top: 1.5rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: We already have a tech program.</h4>
+                        <p>This is different. We focus on AI + creativity. Can complement or replace existing programs.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: What if only a few students enroll?</h4>
+                        <p>Revenue scales with demand. But with proper marketing, interest is typically strong.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 0.5rem;">Q: Quality guarantee?</h4>
+                        <p>Video demos, parent testimonials, and guarantees available. We're transparent about quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="highlight-box" style="margin-top: 2rem; background: #f0f4ff;">
+                <h3 style="margin-top: 0;">Next Steps</h3>
+                <p>Ready to bring AI bootcamp to your school?</p>
+                <ol style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li>Schedule a 20-min call with us</li>
+                    <li>Review curriculum and see student projects</li>
+                    <li>Agree on dates and marketing plan</li>
+                    <li>Launch and earn revenue</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="light-bg">
+        <div class="container">
+            <h2 style="text-align: center;">Ready to Get Started?</h2>
+            <div class="contact-info">
+                <h3 style="color: #1a1a1a; margin-bottom: 1rem;">Let's Talk</h3>
+                <p>📞 <a href="tel:+918291711259">+91-8291711259</a></p>
+                <p>📧 <a href="/cdn-cgi/l/email-protection#5433352126352262656c6d143339353d387a373b39"><span class="__cf_email__" data-cfemail="086f697d7a697e3e393031486f65696164266b6765">[email&#160;protected]</span></a></p>
+                <p style="color: #718096; margin-top: 1rem;">Malibu Town, Sector 47, Gurugram</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #718096; font-size: 0.95rem;">
+                    <strong>Gaurav Sharma</strong> | 12+ years in corporate | Built multiple ventures<br>
+                    Parent | Passionate about education | Available for calls 9 AM - 5 PM IST
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI Bootcamp. All rights reserved.</p>
+            <p>Inspiring the next generation to build the future.</p>
+            <div class="footer-links">
+                <a href="#parents">For Parents</a>
+                <a href="#schools">For Schools</a>
+                <a href="https://linkedin.com/in/gaurav-sharma" target="_blank">LinkedIn</a>
+                <a hr
